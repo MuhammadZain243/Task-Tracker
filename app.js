@@ -1,6 +1,45 @@
+const fs = require('fs');
+const path = require('path');
+
+const TASK_FILE = path.join(__dirname, 'tasks.json');
+
+// Load Task
+const loadTask = () => {
+  // If file is not created or empty
+  if (!fs.existsSync(TASK_FILE)) return [];
+
+  // If file contain data
+  const data = fs.readFileSync(TASK_FILE, 'utf8');
+  return data ? JSON.parse(data) : [];
+};
+
+// Save Task
+const saveTask = (tasks) => {
+  fs.writeFileSync(TASK_FILE, JSON.stringify(tasks));
+};
+
+const now = () => {
+  return new Date().toISOString();
+};
+
+// Generate ID
+const generateID = (tasks) => {
+  return tasks.reduce((map, task) => Math.max(map, task.id), 0) + 1;
+};
+
 // add task
 const addTask = (desciption) => {
-  console.log(desciption);
+  tasks = loadTask();
+  task = {
+    id: generateID(tasks),
+    desciption,
+    status: 'todo',
+    createdAt: now(),
+    updatedAt: now(),
+  };
+  tasks.push(task);
+  saveTask(tasks);
+  console.log(`Task added successfully (ID: ${task.id})`);
 };
 
 // update task
@@ -60,6 +99,5 @@ switch (command) {
 
   default:
     console.log('Unknown Command');
-    s;
     break;
 }

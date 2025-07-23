@@ -29,8 +29,8 @@ const generateID = (tasks) => {
 
 // add task
 const addTask = (desciption) => {
-  tasks = loadTask();
-  task = {
+  let tasks = loadTask();
+  let task = {
     id: generateID(tasks),
     desciption,
     status: 'todo',
@@ -44,8 +44,8 @@ const addTask = (desciption) => {
 
 // update task
 const updateTask = (id, desciption) => {
-  tasks = loadTask();
-  task = tasks.find((t) => t.id === id);
+  let tasks = loadTask();
+  let task = tasks.find((t) => t.id === id);
   if (!task) return console.log('Task not found');
   task.desciption = desciption;
   task.updatedAt = now();
@@ -56,8 +56,8 @@ const updateTask = (id, desciption) => {
 
 // delete task
 const deleteTask = (id) => {
-  tasks = loadTask();
-  index = tasks.findIndex((t) => t.id === id);
+  let tasks = loadTask();
+  const index = tasks.findIndex((t) => t.id === id);
   if (index === -1) return console.log('Task not found');
   tasks.splice(index, 1);
   saveTask(tasks);
@@ -66,8 +66,8 @@ const deleteTask = (id) => {
 
 // Mark In Progress
 const markStatus = (id, status) => {
-  tasks = loadTask();
-  task = tasks.find((t) => t.id === id);
+  let tasks = loadTask();
+  let task = tasks.find((t) => t.id === id);
   if (!task) return console.log('Task not found');
   task.status = status;
   task.updatedAt = now();
@@ -77,8 +77,8 @@ const markStatus = (id, status) => {
 
 // List
 const listTask = (filter = null) => {
-  tasks = loadTask();
-  filtered = filter ? tasks.filter((t) => t.status === filter) : tasks;
+  const tasks = loadTask();
+  const filtered = filter ? tasks.filter((t) => t.status === filter) : tasks;
   if (filtered.length === 0) return console.log('No task found');
   filtered.forEach((task) => {
     console.log(

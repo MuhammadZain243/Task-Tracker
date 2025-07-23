@@ -2,7 +2,6 @@
 
 A simple, lightweight **Command Line Interface (CLI)** to track your tasks — what to do, what you're working on, and what you've completed. Built with **Node.js** using only native modules — no dependencies.
 
----
 
 ## 📦 Features
 
@@ -12,7 +11,6 @@ A simple, lightweight **Command Line Interface (CLI)** to track your tasks — w
 - 💾 Saves tasks in a local `tasks.json` file
 - ⚙️ No external libraries — uses Node.js core modules only
 
----
 
 ## 📁 Project Structure
 

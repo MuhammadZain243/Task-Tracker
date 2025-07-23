@@ -13,6 +13,9 @@ A simple, lightweight **Command Line Interface (CLI)** to track your tasks — w
 
 
 ## Project Structure
+```
+Task-Tracker/
 ├── task-cli.js  # Main CLI logic
 ├── tasks.json   # Auto-generated task database (JSON format)
 └── README.md    # Project documentation
+```

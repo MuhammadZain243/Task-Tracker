@@ -1,6 +1,6 @@
 # Task Tracker CLI
 
-A simple, lightweight **Command Line Interface (CLI)** to track your tasks — what to do, what you're working on, and what you've completed. Built with **Node.js** using only native modules — no dependencies.
+A simple, lightweight **Command Line Interface (CLI)** to track what tasks to do, what you're working on, and what you've completed. Built with **Node.js** using only native modules, no dependencies.
 
 
 ## Features

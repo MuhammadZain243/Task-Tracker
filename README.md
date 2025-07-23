@@ -1,9 +1,9 @@
-# 📝 Task Tracker CLI
+# Task Tracker CLI
 
 A simple, lightweight **Command Line Interface (CLI)** to track your tasks — what to do, what you're working on, and what you've completed. Built with **Node.js** using only native modules — no dependencies.
 
 
-## 📦 Features
+## Features
 
 - ✅ Add, update, delete tasks
 - 🚧 Mark tasks as `todo`, `in-progress`, or `done`
@@ -12,5 +12,7 @@ A simple, lightweight **Command Line Interface (CLI)** to track your tasks — w
 - ⚙️ No external libraries — uses Node.js core modules only
 
 
-## 📁 Project Structure
-
+## Project Structure
+├── task-cli.js  # Main CLI logic
+├── tasks.json   # Auto-generated task database (JSON format)
+└── README.md    # Project documentation

@@ -66,7 +66,13 @@ const deleteTask = (id) => {
 
 // Mark In Progress
 const markStatus = (id, status) => {
-  console.log(id, status);
+  tasks = loadTask();
+  task = tasks.find((t) => t.id === id);
+  if (!task) return console.log('Task not found');
+  task.status = status;
+  task.updatedAt = now();
+  saveTask(tasks);
+  console.log(`Task marked as ${status}`);
 };
 
 // List
@@ -106,10 +112,14 @@ switch (command) {
     markStatus(parseInt(args[1]), 'done');
     break;
 
+  case 'mark-todo':
+    markStatus(parseInt(args[1]), 'todo');
+    break;
+
   case 'list':
     const validStatuses = ['done', 'todo', 'in-progress'];
     const filter = args[1];
-    if (filter && !validStatuses.find(filter)) {
+    if (filter && !validStatuses.includes(filter)) {
       console.log('Invalid status. Use: done, todo, in-progress');
     } else {
       listTask(filter);

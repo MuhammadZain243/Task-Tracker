@@ -2,6 +2,8 @@
 
 A simple, lightweight **Command Line Interface (CLI)** to track what tasks to do, what you're working on, and what you've completed. Built with **Node.js** using only native modules, no dependencies.
 
+> This project is based on the [Task Tracker Project](https://roadmap.sh/projects/task-tracker) from [roadmap.sh](https://roadmap.sh).
+
 
 ## Features
 

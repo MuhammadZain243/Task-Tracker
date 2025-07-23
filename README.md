@@ -20,7 +20,7 @@ Task-Tracker/
 └── README.md    # Project documentation
 ```
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### 1. Clone or Download
 

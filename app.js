@@ -44,12 +44,24 @@ const addTask = (desciption) => {
 
 // update task
 const updateTask = (id, desciption) => {
-  console.log(id, desciption);
+  tasks = loadTask();
+  task = tasks.find((t) => t.id === id);
+  if (!task) return console.log('Task not found');
+  task.desciption = desciption;
+  task.updatedAt = now();
+
+  saveTask(tasks);
+  console.log('Task updated successfully');
 };
 
 // delete task
 const deleteTask = (id) => {
-  console.log(id);
+  tasks = loadTask();
+  index = tasks.findIndex((t) => t.id === id);
+  if (index === -1) return console.log('Task not found');
+  tasks.splice(index, 1);
+  saveTask(tasks);
+  console.log('Task deleted successfully');
 };
 
 // Mark In Progress
@@ -59,7 +71,14 @@ const markStatus = (id, status) => {
 
 // List
 const listTask = (filter = null) => {
-  console.log(filter);
+  tasks = loadTask();
+  filtered = filter ? tasks.filter((t) => t.status === filter) : tasks;
+  if (filtered.length === 0) return console.log('No task found');
+  filtered.forEach((task) => {
+    console.log(
+      `ID: ${task.id} | ${task.status} | ${task.desciption} | CreatedAt: ${task.createdAt} | UpdatedAt: ${task.updatedAt}`
+    );
+  });
 };
 
 // CLI argument parsing

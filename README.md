@@ -19,3 +19,26 @@ Task-Tracker/
 ├── tasks.json   # Auto-generated task database (JSON format)
 └── README.md    # Project documentation
 ```
+
+## 🛠️ Getting Started
+
+### 1. Clone or Download
+
+```bash
+git clone https://github.com/your-username/task-tracker-cli.git
+cd task-tracker-cli
+```
+
+### 2. Commands
+```bash
+node task-cli.js add "Buy groceries"
+node task-cli.js update 1 "Buy groceries and cook dinner"
+node task-cli.js delete 1
+node task-cli.js mark-in-progress 1
+node task-cli.js mark-done 1
+node task-cli.js mark-todo 1
+node task-cli.js list
+node task-cli.js list done
+node task-cli.js list in-progress
+node task-cli.js list todo
+```
